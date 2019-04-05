@@ -6,7 +6,7 @@ spec:
   environments:
     - name: production2
       build:
-        from: kinda_production2
+        from: kinda-production2
     - name: dev
       build:
         from: master
