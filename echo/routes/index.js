@@ -13,7 +13,8 @@ router.get('/', function(req, res) {
         'RADIX_COMPONENT': (process.env.RADIX_COMPONENT || 'empty'),
         'RADIX_ENVIRONMENT': (process.env.RADIX_ENVIRONMENT || 'empty'),
         'HOSTNAME': (os.hostname() || 'empty'),
-        'HOSTPLATFORM': (os.platform() || '0') 
+        'HOSTPLATFORM': (os.platform() || '0') ,
+	'SECRET_I_DEFINED': (process.env.MY_SUPER_SECRET || 'empty')
     };
 
     res.set('Content-Type', 'application/json');
