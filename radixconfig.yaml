@@ -4,7 +4,10 @@ metadata:
   name: pokroetsanebopylinkamizvezd
 spec:
   environments:
-    - name: production
+    - name: production2
+      build:
+        from: kinda_production2
+    - name: dev
       build:
         from: master
   components:
