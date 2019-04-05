@@ -18,10 +18,23 @@ spec:
         port: 3000
       public: false
       environmentConfig:
-        - environment: production
+        - environment: production2
           variables:
             PORT: 3000
-            NODE_ENV: "production"
+            NODE_ENV: "production2"
+          monitoring: true
+          resources:
+            requests:
+              memory: "42Mi"
+              cpu: "10m"
+            limits:
+              memory: "50Mi"
+              cpu: "20m"
+          replicas: 1
+        - environment: dev
+          variables:
+            PORT: 3000
+            NODE_ENV: "dev"
           monitoring: true
           resources:
             requests:
@@ -40,7 +53,7 @@ spec:
          port: 3001
       public: true
       environmentConfig:
-        - environment: production
+        - environment: production2
           variables:
             PORT: 3001
             NODE_ENV: "production"
@@ -54,6 +67,20 @@ spec:
               memory: "54Mi"
               cpu: "20m"
           replicas: 1
+        - environment: dev
+          variables:
+            PORT: 3001
+            NODE_ENV: "does this name matter"
+            ECHO_URL: "http://echo:3000"
+          monitoring: false
+          resources:
+            requests:
+              memory: "50Mi"
+              cpu: "10m"
+            limits:
+              memory: "54Mi"
+              cpu: "20m"
+          replicas: 1
   dnsAppAlias:
-    environment: production
+    environment: production2
     component: www
