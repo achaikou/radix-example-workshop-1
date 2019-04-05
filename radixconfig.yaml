@@ -21,7 +21,7 @@ spec:
         - environment: production2
           variables:
             PORT: 3000
-            NODE_ENV: "production2"
+            NODE_ENV: "echo production"
           monitoring: true
           resources:
             requests:
@@ -34,7 +34,7 @@ spec:
         - environment: dev
           variables:
             PORT: 3000
-            NODE_ENV: "dev"
+            NODE_ENV: "echo dev"
           monitoring: true
           resources:
             requests:
@@ -56,7 +56,7 @@ spec:
         - environment: production2
           variables:
             PORT: 3001
-            NODE_ENV: "production"
+            NODE_ENV: "www production"
             ECHO_URL: "http://echo:3000"
           monitoring: false
           resources:
@@ -70,7 +70,7 @@ spec:
         - environment: dev
           variables:
             PORT: 3001
-            NODE_ENV: "does this name matter"
+            NODE_ENV: "www dev"
             ECHO_URL: "http://echo:3000"
           monitoring: false
           resources:
